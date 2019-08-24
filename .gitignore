@@ -15,3 +15,7 @@
 
 # Ignore Byebug command history file.
 .byebug_history
+
+# .gitignoreは、コミットしたくないファイル・ディレクトリを指定できる設定ファイルです。
+# あらかじめ画像が保管されるpublic/uploadsディレクトリを.gitignoreに追加しておき、画像がGithubにコミットされないようにしましょう。
+public/uploads/*
