@@ -1,7 +1,7 @@
 .left
   .left__header
     .left__header__name
-      %p{class: "left__header__name--mainname text-white"}
+      %p{class: "left__header__name--mainname"}
         Jiro_Test
       %ul{class: "left__header__name__ul"}
         %li{class: "left__header__name__ul__li"}
@@ -55,11 +55,11 @@
         OK! My friend!
   .right__form
     .right__form__input
-      %form{:action => "/", :method => "post", class: 'right__form__input--form'}
-        %input{:name => "text", :size => "40", placeholder: 'type a message', class: 'right__form__input--field'}
+      %form{action: "/", method: "post", class: 'right__form__input--form'}
+        %input{name: "text", size: "40", placeholder: 'type a message', class: 'right__form__input--field'}
           %label{class: 'right__form__input--label'} 
             %i.fa.fa-image
-            %input{:name => "file", :type => "file", class: 'right__form__input--file'}    
-    %input{:type => "submit", :value => "Send", class: 'right__form__input--submit'}
+            %input{name: "file", type: "file", class: 'right__form__input--file'}    
+    %input{type: "submit", value: "Send", class: 'right__form__input--submit'}
 
 
