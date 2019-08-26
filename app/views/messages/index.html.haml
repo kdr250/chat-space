@@ -1,0 +1,65 @@
+.left
+  .left__header
+    .left__header__name
+      %p{class: "left__header__name--mainname text-white"}
+        Jiro_Test
+      %ul{class: "left__header__name__ul"}
+        %li{class: "left__header__name__ul__li"}
+          = link_to "#" do
+            = fa_icon 'edit', class: "left__header__name__ul__li--icon"
+        %li{class: "left__header__name__ul__li"}
+          = link_to "#" do
+            = fa_icon 'cog', class: "left__header__name__ul__li--icon"
+  .left__side
+    .left__side__box
+      .left__side__box__group
+        = link_to "text", "#", class: "left__side__box__group--text"
+      .left__side__box__word
+        = link_to "OK! My friend!", "#", class: "left__side__box__word--text"
+    .left__side__box
+      .left__side__box__group
+        = link_to "text", "#", class: "left__side__box__group--text"
+      .left__side__box__word
+        = link_to "OK! My friend!", "#", class: "left__side__box__word--text"
+
+.right
+  .right__header
+    .right__header__main
+      .right__header__main__group
+        test2
+      .right__header__main__member
+        Member: Ichiro
+    .right__header__btn
+      = link_to "Edit", "#", class: "right__header__btn--link"
+  .right__contents
+    .right__contents__messagebox
+      .right__contents__messagebox__message--name
+        Jiro
+      .right__contents__messagebox__message--date
+        2019/08/24(Sat) 19:23:03
+      .right__contents__messagebox--text
+        OK! My friend!
+    .right__contents__messagebox
+      .right__contents__messagebox__message--name
+        Jiro
+      .right__contents__messagebox__message--date
+        2019/08/24(Sat) 19:23:03
+      .right__contents__messagebox--text
+        OK! My friend!
+    .right__contents__messagebox
+      .right__contents__messagebox__message--name
+        Jiro
+      .right__contents__messagebox__message--date
+        2019/08/24(Sat) 19:23:03
+      .right__contents__messagebox--text
+        OK! My friend!
+  .right__form
+    .right__form__input
+      %form{:action => "/", :method => "post", class: 'right__form__input--form'}
+        %input{:name => "text", :size => "40", placeholder: 'type a message', class: 'right__form__input--field'}
+          %label{class: 'right__form__input--label'} 
+            %i.fa.fa-image
+            %input{:name => "file", :type => "file", class: 'right__form__input--file'}    
+    %input{:type => "submit", :value => "Send", class: 'right__form__input--submit'}
+
+
