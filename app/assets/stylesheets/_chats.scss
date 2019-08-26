@@ -1,0 +1,165 @@
+.left {
+  width: 300px;
+  color: $white;
+  float: left;
+  &__header {
+    height: 100px;
+    background-color: $darkblue;
+    align-items: center;
+    display: flex;
+    padding: 0 20px;
+    &__name {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      font-weight: bold;
+      &--mainname {
+        font-size: 16px;
+      }
+      &__ul {
+        display: flex;
+        list-style: none;
+        &__li {
+          margin-left: 0.3rem;
+          &--icon {
+            display: inline-block;
+            color: $white;
+          }
+        }
+      } 
+    }
+  }
+  &__side {
+    height: calc(100vh - 100px);
+    background-color: $lightblue;
+    padding: 20px 20px 0;
+    box-sizing: border-box;
+    &__box {
+      margin-bottom: 40px;
+      &__group {
+        margin-bottom: 5px;
+        font-size: 15px;
+        &--text {
+          color: $white;
+          text-decoration: none;
+        }
+      }
+      &__word {
+        font-size: 11px;
+        &--text {
+          color: $white;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+.right {
+  width: calc(100% - 300px);
+  float: left;
+  &__header {
+    height: 99px;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: solid 1px $fazzywhite;
+    &__main {
+      margin-top: 35px;
+      &__group {
+        font-size: 20px;
+        color: $darkgrey;
+      }
+      &__member {
+        padding-top: 15px;
+        font-size: 12px;
+        color: $whitegrey;
+      }
+    }
+    &__btn {
+      height: 38px;
+    line-height: 40px;
+    padding: 0 20px;
+    margin-top: 30px;
+    border: solid 1px $marinblue;
+    position: absolute;
+    right: 40px;
+      &--link{
+          color: $marinblue;
+          text-decoration: none;
+      }
+    }
+  }
+
+  &__contents {
+    height: calc(100vh - 190px - 46px);
+    background-color: $nearwhite;
+    padding: 46px 40px 0px;
+    &__messagebox {
+      padding-bottom: 40px;
+      &__message {
+        display: flex;
+        margin-bottom: 10px;
+        &--name{
+          color: $lightgrey;
+          font-size: 16px;
+          font-weight: bold;
+          float: left;
+        }
+        &--date{
+          color: $whitegrey;
+          font-size: 12px;
+          margin-left: 10px;
+          float: left;
+        }
+      }
+      &--text{
+        color: $lightgrey;
+        font-size: 14px;
+        margin-bottom: 10px;
+        clear: both;
+        padding-top: 10px;
+      }
+    }
+  }
+  &__form {
+    height: 50px;
+    padding: 20px 40px;
+    background-color: $lightwhite;
+    &__input {
+      float: left;
+      position: relative;
+      width: calc(100% - 100px - 15px);
+      box-sizing: border-box;
+      &--form{
+        display: flex;
+      }
+      &--field{
+        height: 50px;
+        width: 100%;
+        padding: 0 40px 0 10px;
+        color: $lightgrey;
+        border-style: none;
+      }
+      &--label{
+        font-size: 1.3rem;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+      }
+      &--file{
+        display: none;
+      }
+      &--submit{
+        width: 100px;
+        height: 50px;
+        padding: 0 30px;
+        margin-left: 15px;
+        background-color: $marinblue;
+        color: $white;
+        cursor: pointer;
+      }
+    }
+  }
+}
