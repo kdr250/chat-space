@@ -1,26 +1,6 @@
-.left
-  .left__header
-    .left__header__name
-      %p.left__header__name--mainname
-        Jiro_Test
-      %ul.left__header__name__ul
-        %li.left__header__name__ul__li
-          = link_to "#" do
-            = fa_icon 'edit', class: "left__header__name__ul__li--icon"
-        %li.left__header__name__ul__li
-          = link_to "#" do
-            = fa_icon 'cog', class: "left__header__name__ul__li--icon"
-  .left__side
-    .left__side__box
-      .left__side__box__group
-        = link_to "text", "#", class: "left__side__box__group--text"
-      .left__side__box__word
-        = link_to "OK! My friend!", "#", class: "left__side__box__word--text"
-    .left__side__box
-      .left__side__box__group
-        = link_to "text", "#", class: "left__side__box__group--text"
-      .left__side__box__word
-        = link_to "OK! My friend!", "#", class: "left__side__box__word--text"
+-# = render partial: 'shared/item_header', locals: { item: @item }
+-# = render partial: 'devise/shared/side_bar' locals: { groups: @groups }
+= render partial: 'devise/shared/side_bar'
 
 .right
   .right__header

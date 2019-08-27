@@ -57,3 +57,9 @@ gem 'haml-rails'
 
 # Font Awesome導入
 gem 'font-awesome-rails'
+
+# ユーザー管理実装
+gem 'devise'
+
+gem 'pry-rails'
+
