@@ -57,15 +57,12 @@ gem 'haml-rails'
 
 # Font Awesome導入
 gem 'font-awesome-rails'
-<<<<<<< Updated upstream
-=======
 
 # ユーザー管理実装
 gem 'devise'
 
 gem 'pry-rails'
 
-# ファイルアップロード用にcarrierwave導入
 gem 'carrierwave'
 gem 'mini_magick'
->>>>>>> Stashed changes
+

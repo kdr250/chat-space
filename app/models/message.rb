@@ -4,4 +4,5 @@ class Message < ApplicationRecord
   # validates :text, presence: true, unless: :image?
   validates :text, presence: true, unless: :image?
   mount_uploader :image, ImagesUploader
+
 end
