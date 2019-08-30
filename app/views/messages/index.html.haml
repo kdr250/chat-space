@@ -1,46 +1,31 @@
--# = render partial: 'shared/item_header', locals: { item: @item }
--# = render partial: 'devise/shared/side_bar' locals: { groups: @groups }
+
 = render partial: 'devise/shared/side_bar'
 
 .right
   .right__header
     .right__header__main
       .right__header__main__group
-        test2
+        = @group.name
       .right__header__main__member
-        Member: Ichiro
+        - member = 'Member: '
+        - @group.users.each do |user|
+          - member += user.name + ' '
+        %p #{member}
+
     .right__header__btn
-      = link_to "Edit", "#", class: "right__header__btn--link"
+      = link_to "Edit", edit_group_path(params[:group_id]), class: "right__header__btn--link"
+
   .right__contents
-    .right__contents__messagebox
-      .right__contents__messagebox__message--name
-        Jiro
-      .right__contents__messagebox__message--date
-        2019/08/24(Sat) 19:23:03
-      .right__contents__messagebox--text
-        OK! My friend!
-    .right__contents__messagebox
-      .right__contents__messagebox__message--name
-        Jiro
-      .right__contents__messagebox__message--date
-        2019/08/24(Sat) 19:23:03
-      .right__contents__messagebox--text
-        OK! My friend!
-    .right__contents__messagebox
-      .right__contents__messagebox__message--name
-        Jiro
-      .right__contents__messagebox__message--date
-        2019/08/24(Sat) 19:23:03
-      .right__contents__messagebox--text
-        OK! My friend!
+    = render @messages
+    -# - @messages.each do |message|
+    -#   = render partial: 'messages/messages', locals: {message: message}
+    
   .right__form
     .right__form__input
-      -# %form{action: "/", method: "post", class: 'right__form__input--form'}
-      %form.right__form__input--form{action: "/", method: "post"}
-        %input.right__form__input--field{name: "text", size: "40", placeholder: 'type a message'}
-          %label.right__form__input--label
-            %i.fa.fa-image
-            %input.right__form__input--file{name: "file", type: "file"}
-    %input.right__form__input--submit{type: "submit", value: "Send"}
-
-
+      = form_for([@group, @message], url: "/groups/#{params[:group_id]}/messages", method: :post, html: {class: 'right__form__input--form'}) do |f|
+        = f.text_field :text, class: "right__form__input--field" , size: "40", placeholder: "type a message"
+        = f.label :image, class: "right__form__input--label" do
+          = fa_icon 'image'
+          = f.file_field :image, class: "right__form__input--file"
+        = f.submit "Send", class: "right__form__input--submit"
+  -# %i.fa.fa-image

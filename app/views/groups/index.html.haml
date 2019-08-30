@@ -1,24 +1,28 @@
 / ユーザー編集ページに遷移するためのパスを追加
-.left
-  .left__header
-    .left__header__name
-      %p.left__header__name--mainname
-        = current_user.name
-      %ul.left__header__name__ul
-        %li.left__header__name__ul__li
-          = link_to new_group_path do
-            = fa_icon 'edit', class: "left__header__name__ul__li--icon"
-        %li.left__header__name__ul__li
-          = link_to edit_user_path(current_user) do
-            = fa_icon 'cog', class: "left__header__name__ul__li--icon"
+
+= render partial: 'devise/shared/side_bar'
+
+-# .left
+-#   .left__header
+-#     .left__header__name
+-#       %p.left__header__name--mainname
+-#         = current_user.name
+-#       %ul.left__header__name__ul
+-#         %li.left__header__name__ul__li
+-#           = link_to new_group_path do
+-#             = fa_icon 'edit', class: "left__header__name__ul__li--icon"
+-#         %li.left__header__name__ul__li
+-#           = link_to edit_user_path(current_user) do
+-#             = fa_icon 'cog', class: "left__header__name__ul__li--icon"
 
   
-  .left__side
-    - @groups.each do |group|
-      .left__side__box
-        .left__side__box__group
-          = link_to group.name, "#", class: "left__side__box__group--text"
-        .left__side__box__word
-          = link_to "テキスト", "#", class: "left__side__box__word--text"
-          -# = link_to group.messages.last.text if group.messages, "#", class: "left__side__box__word--text"
+-#   .left__side
+-#     - @groups.each do |group|
+-#       .left__side__box
+-#         .left__side__box__group
+-#           = link_to group.name, "#", class: "left__side__box__group--text"
+-#         .left__side__box__word
+-#           = link_to "テキスト", "#", class: "left__side__box__word--text"
+-#           -# = link_to group.messages.last.text if group.messages, "#", class: "left__side__box__word--text"
+
 
