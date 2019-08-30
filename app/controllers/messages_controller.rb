@@ -1,14 +1,10 @@
 class MessagesController < ApplicationController
-  def index
-    @groups = current_user.groups
-  end
   
   before_action :set_group
 
   def index
     @message = Message.new
     @messages = @group.messages.includes(:user)
-    @group = Group.find(params[:group_id])
     # @groups = current_user.groups.includes(:messages)
     # @message = Message.new
   end
