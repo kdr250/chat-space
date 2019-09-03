@@ -1,23 +1,21 @@
 
 $(function(){
-  function buildHTML(message, text, image){
+  function buildHTML(message){
+    var text = message.text ? message.text : '';
+    var image = message.image.url ? `<img alt="test" src="${message.image.url}" width="200" height="132" style="margin-top: 10px;" >` : '';
     var html = `<div class="right__contents__messagebox">
-    <div class="right__contents__messagebox__message--name">
-    ${message.user_name}
+      <div class="right__contents__messagebox__message--name">
+        ${message.user_name}
     </div>
     <div class="right__contents__messagebox__message--date">
-    ${message.created_at}
+      ${message.created_at}
     </div>
     <div class="right__contents__messagebox--text">
-        ${text}
-        </div>`;
-
-  if (image != null) {
-    html += `
-          <div>
-          <img alt="test" style="margin-top: 10px;" src=${image} width="200" height="132">
-          </div>`;
-    };
+      ${text}
+    </div>
+    <div>
+      ${image}
+    </div>`;
     return html;
   }
 
@@ -35,10 +33,7 @@ $(function(){
       contentType: false
     })
     .done(function(data){
-      var text = data.text ? data.text : '';
-      var image = data.image.url ? data.image.url : null;
-      var html = buildHTML(data, text, image);
-
+      var html = buildHTML(data);
       $('.right__contents').append(html);
       $('#new_message').get(0).reset();
       //データ受け取り後画面最下部までスクロール
