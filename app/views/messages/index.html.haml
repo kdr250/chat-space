@@ -17,8 +17,6 @@
 
   .right__contents
     = render @messages
-    -# - @messages.each do |message|
-    -#   = render partial: 'messages/messages', locals: {message: message}
     
   .right__form
     .right__form__input
@@ -28,4 +26,3 @@
           = fa_icon 'image'
           = f.file_field :image, class: "right__form__input--file"
         = f.submit "Send", class: "right__form__input--submit"
-  -# %i.fa.fa-image

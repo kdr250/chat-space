@@ -4,6 +4,8 @@
   .right__contents__messagebox__message--date
     = message.created_at.strftime('%Y/%m/%d %H:%M')
   .right__contents__messagebox--text
-    = message.text
+    - if message.text.present?
+      = message.text
     %br
-    = image_tag message.image, size: "200x132", alt: "test"
+    - if message.image.present?
+      = image_tag message.image, size: "200x132", alt: "test", style: "margin-top: 10px;"

@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
 
   def edit
-    # binding.pry
     @user = current_user
   end
 
