@@ -83,6 +83,7 @@ li {
 .chat-group-user {
   padding: 0 15px;
   line-height: 50px;
+  height: 100%;
   font-size: 14px;
   border-bottom: 1px solid #ddd;
   &:after {
@@ -104,4 +105,12 @@ li {
       color: #f05050;
     }
   }
+}
+
+.user-search-result{
+  float: left;
+  width: 100%;
+  line-height: 30px;
+  padding: 10px 15px;
+  box-sizing: border-box;
 }
