@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
 
   def index
-    # @user = User.find(show_params[:keyword])
-    # respond_to do |format|
-    #   format.html
-    #   format.json
-    # end
+    @users = User.where.not(id: current_user.id).where('name LIKE(?)', "%#{show_params[:keyword]}%")
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   def edit

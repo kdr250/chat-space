@@ -9,15 +9,9 @@ class GroupsController < ApplicationController
   def new
     @group = Group.new
     @group.users << current_user
-    @users = User.where('name LIKE(?)', "%#{show_params[:keyword]}%").limit(5)
-    respond_to do |format|
-      format.html
-      format.json
-    end
   end
 
   def create
-    # binding.pry
     @group = Group.new(group_params)
     if @group.save
       redirect_to root_path, notice: 'グループを作成しました' 
