@@ -3,6 +3,7 @@ $(function(){
   function buildHTML(message){
     var text = message.text ? message.text : '';
     var image = message.image.url ? `<img alt="test" src="${message.image.url}" width="200" height="132" style="margin-top: 10px;" >` : '';
+    
     var html = `<div class="right__contents__messagebox">
       <div class="right__contents__messagebox__message--name">
         ${message.user_name}
@@ -19,6 +20,7 @@ $(function(){
     return html;
   }
 
+
   $('#new_message').on('submit', function(e){
     // preventDefault()を使用してデフォルトのイベントを止めます。
     e.preventDefault();
@@ -30,7 +32,7 @@ $(function(){
       data: formData,
       dataType: 'json',
       processData: false,
-      contentType: false
+      contentType: false,
     })
     .done(function(data){
       var html = buildHTML(data);

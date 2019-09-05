@@ -78,6 +78,9 @@ li {
       width: 70%;
     }
   }
+  &__search {
+    
+  }
 }
 
 .chat-group-user {
@@ -104,4 +107,12 @@ li {
       color: #f05050;
     }
   }
+}
+
+.user-search-result{
+  float: left;
+  width: 100%;
+  line-height: 30px;
+  padding: 10px 15px;
+  box-sizing: border-box;
 }

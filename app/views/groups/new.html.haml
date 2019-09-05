@@ -12,16 +12,30 @@
         = f.label :name, "グループ名", { class: 'chat-group-form__label', for: "chat_group_name" }
       .chat-group-form__field--right
         = f.text_field :name, { id: 'chat_group_name', class: 'chat-group-form__input', placeholder: "グループ名を入力してください", type: "text" }
-    .chat-group-form__field
-    .chat-group-form__field
+
       .chat-group-form__field--left
-        = f.label :user, "チャットメンバー", {class: "chat-group-form__label"}
+        -# = f.label :user_ids, "チャットメンバーを追加", {class: 'chat-group-form__label', for: "chat_group_チャットメンバーを追加"}
+        = f.label :user, "チャットメンバーを追加", {class: 'chat-group-form__label', for: "chat_group_チャットメンバーを追加"}
       .chat-group-form__field--right
-        = f.collection_check_boxes :user_ids, User.all, :id, :name, include_hidden: false do |b|
-          = b.label { b.check_box + b.text }
-        / グループ作成機能の追加時はここにcollection_check_boxesの記述を入れてください
-        / この部分はインクリメンタルサーチ(ユーザー追加の非同期化)のときにも使用します
-    .chat-group-form__field
+        .chat-group-form__search{class: 'clearfix'}
+          -# = f.text_field :user_ids, {class: 'chat-group-form__input', id: 'user-search-field', placeholder: '追加したいユーザー名を入力してください', value: nil}
+          = f.text_field :user, {class: 'chat-group-form__input', id: 'user-search-field', placeholder: '追加したいユーザー名を入力してください', value: nil}
+        .user-search-result{id: "user-search-result"}
+          .chat-group-user{class: 'clearfix'}
+            %p{class: "chat-group-user__name", id: "chat-group-search-result"} ユーザー名
+            -# .chat-group-user__btn{class: "user-search-add chat-group-user__btn--add", data-user-id: 1, data-user-name: "Taro"} 追加
+      .chat-group-form__field--right
       .chat-group-form__field--left
+        %p{class: 'chat-group-form__label'} チャットメンバー
       .chat-group-form__field--right
+        .user-search-result{id: "user-search-added"}
+          .chat-group-user{class: 'clearfix'}
+            %p{class: "chat-group-user__name", id: "chat-group-search-result"} ユーザー名
+            -# .chat-group-user__btn{class: "user-search-add chat-group-user__btn--add", data-user-id: 1, data-user-name: "Taro"} 追加
+      .chat-group-form__field--right
+        -# = f.fields_for :users do |user|
+        -#   -# 既存データがあれば表示する
+        -#   -# = 
+        -#   = user.hidden_field :id, value: user.object.id
         = f.submit :Save, { class: "chat-group-form__action-btn", type: "submit", value: "Save"}
+

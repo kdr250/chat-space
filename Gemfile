@@ -71,4 +71,6 @@ gem 'mini_magick'
 
 gem 'rails-i18n'
 
-gem 'jquery-rails'
+gem 'jquery-ui-rails'
+
+# gem 'jquery-rails'

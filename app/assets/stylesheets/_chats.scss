@@ -3,11 +3,15 @@
   color: $white;
   float: left;
   &__header {
+    z-index: 2;
     height: 100px;
+    width: 300px;
     background-color: $darkblue;
     align-items: center;
     display: flex;
     padding: 0 20px;
+    position: fixed;
+    box-sizing: border-box;
     &__name {
       display: flex;
       justify-content: space-between;
@@ -30,6 +34,7 @@
     }
   }
   &__side {
+    margin-top: 100px;
     height: calc(100vh - 100px);
     background-color: $lightblue;
     padding: 20px 20px 0;
@@ -59,13 +64,19 @@
   width: calc(100% - 300px);
   float: left;
   &__header {
+    background-color: white;
+    z-index: 2;
     height: 99px;
+    width: calc(100% - 300px);
     padding: 0 40px;
     display: flex;
     justify-content: space-between;
     border-bottom: solid 1px $fazzywhite;
+    position: fixed;
+    box-sizing: border-box;
     &__main {
       margin-top: 35px;
+      float: left;
       &__group {
         font-size: 20px;
         color: $darkgrey;
@@ -77,13 +88,14 @@
       }
     }
     &__btn {
-      height: 38px;
+    height: 38px;
     line-height: 40px;
     padding: 0 20px;
     margin-top: 30px;
     border: solid 1px $marinblue;
-    position: absolute;
-    right: 40px;
+    // position: absolute;
+    float: right;
+    margin-right: 40px;
       &--link{
           color: $marinblue;
           text-decoration: none;
@@ -92,6 +104,7 @@
   }
 
   &__contents {
+    margin-top: 100px;
     height: calc(100vh - 190px - 48px);
     background-color: $nearwhite;
     padding: 46px 40px 0px;
