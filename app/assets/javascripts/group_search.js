@@ -59,8 +59,9 @@ $(function() {
       $("#user-search-result").empty();
       if (users.length !== 0) {
         users.forEach(function(user){
-          console.log($('.chat-group-user__btn--remove[date-user-id="' + user.id + '"]'))
-          if( $('.chat-group-user__btn--remove[date-user-id="' + user.id + '"]').length ) {
+          // console.log($('.chat-group-user__btn--remove[date-user-id="' + user.id + '"]'))
+          console.log($('.chat-group-user__btn--remove[data-user-id="' + user.id + '"]'))
+          if( $('.chat-group-user__btn--remove[data-user-id="' + user.id + '"]').length ) {
           // if($('.chat-group-user__btn--remove').is('[date-user-id="' + user.id + '"]')){
             // $('input[value="' + user.id + '"]');
             console.log("すでにグループメンバーにユーザーがいます")
