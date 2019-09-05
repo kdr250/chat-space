@@ -78,14 +78,12 @@ li {
       width: 70%;
     }
   }
-  &__search {
-    
-  }
 }
 
 .chat-group-user {
   padding: 0 15px;
   line-height: 50px;
+  height: 100%;
   font-size: 14px;
   border-bottom: 1px solid #ddd;
   &:after {
