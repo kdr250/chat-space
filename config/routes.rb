@@ -15,9 +15,5 @@ Rails.application.routes.draw do
   end
 end
 
-    # # namespace api
-    # namespace :api do
-    #   resources :messages, only: :index, defaults: { format: 'json' }
-    # end
 
 

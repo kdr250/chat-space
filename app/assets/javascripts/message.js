@@ -59,8 +59,6 @@ $(function(){
     $.ajax({
       //ルーティングで設定した通り/groups/id番号/api/messagesとなるよう文字列を書く
       url: 'api/messages',
-      // /groups/:group_id/messages
-      // /groups/:group_id/api/messages
       //ルーティングで設定した通りhttpメソッドをgetに指定
       type: 'get',
       dataType: 'json',
@@ -77,7 +75,6 @@ $(function(){
       var messege_box = $('.right__contents')
 
       //配列messagesの中身一つ一つを取り出し、HTMLに変換したものを入れ物に足し合わせる
-      // messages.each(function(i, message){
       messages.forEach(function(message){
         console.log(message)
         var text = message.text ? message.text : '';
