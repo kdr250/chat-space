@@ -41,8 +41,6 @@ $(function(){
       $('#new_message').get(0).reset();
       //データ受け取り後画面最下部までスクロール
       $('.right__contents').animate({ scrollTop: $('.right__contents')[0].scrollHeight});
-      console.log("submit-animate")
-      console.log($('.right__contents').animate({ scrollTop: $('.right__contents')[0].scrollHeight}));
     })
     .fail(function(){
       alert('error');
@@ -55,7 +53,6 @@ $(function(){
   var reloadMessages = function() {
     //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
     last_message_id = $('.right__contents__messagebox:last').data('id')
-    console.log(last_message_id)
     $.ajax({
       //ルーティングで設定した通り/groups/id番号/api/messagesとなるよう文字列を書く
       url: 'api/messages',
@@ -66,8 +63,6 @@ $(function(){
       data: {id: last_message_id}
     })
     .done(function(messages) {
-      // debugger;
-      console.log(messages)
       //追加するHTMLの入れ物を作る
       var insertHTML = '';
 
@@ -76,7 +71,6 @@ $(function(){
 
       //配列messagesの中身一つ一つを取り出し、HTMLに変換したものを入れ物に足し合わせる
       messages.forEach(function(message){
-        console.log(message)
         var text = message.text ? message.text : '';
         var image = message.image.url ? `<img alt="test" src="${message.image.url}" width="200" height="132" style="margin-top: 10px;" >` : '';
         
@@ -99,7 +93,6 @@ $(function(){
 
       $(messege_box).animate({ scrollTop: $(messege_box)[0].scrollHeight});
 
-      console.log('success');
     })
     .fail(function() {
       console.log('error');
