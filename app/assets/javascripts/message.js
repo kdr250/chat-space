@@ -70,24 +70,8 @@ $(function(){
       var messege_box = $('.right__contents')
 
       //配列messagesの中身一つ一つを取り出し、HTMLに変換したものを入れ物に足し合わせる
-      messages.forEach(function(message){
-        var text = message.text ? message.text : '';
-        var image = message.image.url ? `<img alt="test" src="${message.image.url}" width="200" height="132" style="margin-top: 10px;" >` : '';
-        
-        var html = `<div class="right__contents__messagebox" data-id='${message.id}'>
-                    <div class="right__contents__messagebox__message--name">
-                      ${message.user_name}
-                    </div>
-                    <div class="right__contents__messagebox__message--date">
-                      ${message.created_at}
-                    </div>
-                    <div class="right__contents__messagebox--text">
-                      ${text}
-                    </div>
-                    <div>
-                      ${image}
-                    </div>`;
-        //メッセージを追加
+      messages.forEach(function(message){        
+        var html = buildHTML(message)        
         $(messege_box).append(html);
       })
 
@@ -95,7 +79,7 @@ $(function(){
 
     })
     .fail(function() {
-      console.log('error');
+      alert('error');
     });
   };
 
