@@ -1,8 +1,8 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.11.1"
 
-set :application, "my_app_name"
-set :repo_url, "git@example.com:me/my_repo.git"
+# set :application, "chat-space"
+# set :repo_url, "git@example.com:me/my_repo.git"
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
@@ -55,8 +55,9 @@ set :rbenv_type, :user
 set :rbenv_ruby, '2.5.1' #カリキュラム通りに進めた場合、2.5.1か2.3.1です
 
 # どの公開鍵を利用してデプロイするか
-set :ssh_options, auth_methods: ['publickey'],
-                  keys: ['~/.ssh/Pssw0rd.pem']  # 例：~/.ssh/key_pem.pem
+# set :ssh_options, auth_methods: ['publickey'],
+#                   # keys: ['~/.ssh/Pssw0rd.pem']  # 例：~/.ssh/key_pem.pem
+#                   keys: ['~/.ssh/id_rsa.pub']  # 例：~/.ssh/key_pem.pem
 
 # プロセス番号を記載したファイルの場所
 set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }

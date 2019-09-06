@@ -61,3 +61,18 @@
 #   }
 
 server '13.114.158.131', user: 'ec2-user', roles: %w{app db web}
+
+set :ssh_options, {
+  keys: %w(~/.ssh/id_rsa),
+  forward_agent: true,
+  auth_methods: %w(publickey),
+}
+
+# set :ssh_options, {
+# keys: %w(~/.ssh/id_rsa),
+# forward_agent: false,
+# port: 1234,
+# auth_methods: %w(password)
+# auth_methods: %w(publickey), # 認証方法 passwordも可能
+# password: 'xxxxx' #password指定
+# }
