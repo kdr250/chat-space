@@ -73,4 +73,3 @@ gem 'rails-i18n'
 
 gem 'jquery-ui-rails'
 
-# gem 'jquery-rails'
