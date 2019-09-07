@@ -64,6 +64,7 @@ server '13.114.158.131', user: 'ec2-user', roles: %w{app db web}
 
 set :ssh_options, {
   keys: %w(~/.ssh/Pssw0rd.pem),
+  # keys: %w(~/.ssh/id_rsa.pub),
   # forward_agent: true,
   forward_agent: false,
   auth_methods: %w(publickey),
