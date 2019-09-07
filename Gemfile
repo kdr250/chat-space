@@ -79,6 +79,7 @@ gem 'rails-i18n'
 
 gem 'jquery-ui-rails'
 
+gem 'fog-aws'
 
 group :production do
   gem 'unicorn', '5.4.1'
