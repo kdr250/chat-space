@@ -25,8 +25,9 @@ $(function() {
     var html = `<div class='chat-group-user'>
          <input name='group[user_ids][]' type='hidden' value='${user_id}'>
          <p class='chat-group-user__name'>${user_name}</p>
-         <div class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn' data-user-id=${user_id} data-user-name="${user_name}">削除</div>
        </div>`
+    var remove_btn = `<div class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn' data-user-id=${user_id} data-user-name="${user_name}">削除</div>`
+    var current_user = $("input").val()
     add_list.append(html);
   }
 
@@ -73,7 +74,7 @@ $(function() {
   // 削除ボタン押した時の動作
   $('.chat-group-user__btn--remove').on('click', function(e){
     var target = $(e.target);
-    var user_id = target.data('user-id')
+    // var user_id = target.data('user-id')
     target.parent().remove();
   })
 })
