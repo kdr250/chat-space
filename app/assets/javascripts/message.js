@@ -4,15 +4,15 @@ $(function(){
   function buildHTML(message){
     var text = message.text ? message.text : '';
     var image = message.image.url ? `<img alt="test" src="${message.image.url}" width="200" height="132" style="margin-top: 10px;" >` : '';
-    var today = new Date();
-    var created_at = today.getFullYear() + '/' + today.getMonth() + '/' + today.getDate() + ' ' + today.getHours() + ":" + today.getHours()
+    // var today = new Date();
+    // var created_at = today.getFullYear() + '/' + today.getMonth() + '/' + today.getDate() + ' ' + today.getHours() + ":" + today.getHours()
     
     var html = `<div class="right__contents__messagebox" data-id='${message.id}'>
       <div class="right__contents__messagebox__message--name">
         ${message.user_name}
     </div>
     <div class="right__contents__messagebox__message--date">
-      ${created_at}
+      ${message.created_at}
     </div>
     <div class="right__contents__messagebox--text">
       ${text}
